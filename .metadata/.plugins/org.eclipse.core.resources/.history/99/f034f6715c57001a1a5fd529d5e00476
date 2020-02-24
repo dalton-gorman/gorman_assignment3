@@ -1,0 +1,81 @@
+package gorman_problem2;
+
+public class SavingsAccount {
+	
+	//create private class variable annualInterestRate
+	private static double annualInterestRate = 0.0; // static class variable
+	  
+	//create private instance variable savingsBalance
+	private double savingsBalance;
+	  
+	// Constructor
+	public SavingsAccount(double savingsBalance) {
+		this.savingsBalance = savingsBalance;  
+	}
+	  
+	// public method created called calculateMonthlyInterest
+	public void calculateMonthlyInterest() {
+		double interest;
+		interest = (this.savingsBalance * (annualInterestRate / 100)) / 12;
+		this.savingsBalance += interest;
+	}
+	  
+	// to display balance
+	public void showBalance(){
+	System.out.printf("$%.2f", this.savingsBalance);
+	}
+	  
+	// create public class method modifyInterestRate
+	public static void modifyInterestRate(double modifiedRate) {
+		annualInterestRate = modifiedRate;
+	}
+	
+	
+	//-------------------------------------------------------------
+	/*//annualInterestRate is a private class variable
+	static private double annualInterestRate;
+	//savingsBalance is a private instance variable
+	private double savingsBalance;
+	
+	public SavingsAccount() {
+		this.savingsBalance = 0;
+	}
+	
+	
+	public SavingsAccount(double savingsBalance) {
+		this.savingsBalance = savingsBalance;
+	}
+	
+	
+	public double getSavingsBalance() {
+		return this.savingsBalance;
+	}
+	
+	
+	public double[] getMonthsSavingBalance(int totalMonths) {
+        double[] monthlyIntMonth = new double[totalMonths];
+        double monthlyInt;
+        
+        for(int i=0; i<totalMonths; i++) {
+            monthlyInt = (double)((this.savingsBalance * annualInterestRate) / 12);
+            this.savingsBalance += monthlyInt;
+            monthlyIntMonth[i] = this.savingsBalance;
+        }
+        return monthlyIntMonth;
+     }
+  
+    
+     //calculateMonthlyInterest is a public instance method
+     public void calculateMonthlyInterest() {
+         double monthlyInt;
+         monthlyInt = (double)((this.savingsBalance*annualInterestRate) / 12);
+         this.savingsBalance += monthlyInt;
+     }
+     
+     
+     //modifyInterestRate is a public class method
+     public static void modifyInterestRate(double newInterestRate) {
+        annualInterestRate = newInterestRate;
+     }*/
+}
+

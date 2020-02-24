@@ -1,0 +1,33 @@
+package gorman_problem2;
+
+public class SavingsAccount {
+	
+	//create private class variable annualInterestRate
+	private static double annualInterestRate = 0.0;
+	  
+	//create private instance variable savingsBalance
+	private double savingsBalance;
+	  
+	// Constructor
+	public SavingsAccount(double savingsBalance) {
+		this.savingsBalance = savingsBalance;  
+	}
+	  
+	// public method created called calculateMonthlyInterest
+	public void calculateMonthlyInterest() {
+		double interest;
+		interest = (this.savingsBalance * (annualInterestRate / 100)) / 12;
+		this.savingsBalance += interest;
+	}
+	  	  
+	// create public class method modifyInterestRate
+	public static void modifyInterestRate(double modifiedRate) {
+		annualInterestRate = modifiedRate;
+	}
+	
+	// public method that prints balance from each month
+	public void printBalance(){
+		System.out.printf("$%.2f", this.savingsBalance);
+	}
+}	
+	

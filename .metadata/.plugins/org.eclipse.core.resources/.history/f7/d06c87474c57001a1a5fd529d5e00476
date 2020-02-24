@@ -1,0 +1,69 @@
+package gorman_problem2;
+
+public class SavingsAccountTest {
+
+    public SavingsAccountTest() {
+    
+    }
+   
+    public static void main(String[] args) {
+    	
+    	//Test program instantiates two SavingsAccount objects
+    	SavingsAccount saver1,saver2;
+        
+    	saver1 = new SavingsAccount (2000.0);
+        saver2 = new SavingsAccount (3000.0);
+        
+        //Test program sets the annualInterestRate to 4%
+        SavingsAccount.modifyInterestRate (0.04);
+        
+       
+        //Show 12 months' complete balance
+        int totalMonth = 12;  
+        
+        double[] balanceMonth1 = saver1.getMonthsSavingBalance(totalMonth);  
+        //double saver1Month13 = (balanceMonth1[11] + ((balanceMonth1 [11] * .05) / 12));
+        double[] balanceMonth2 = saver2.getMonthsSavingBalance(totalMonth); 
+        //double saver2Month13 = (balanceMonth2[11] + ((balanceMonth2 [11] * .05) / 12));
+        
+        System.out.println("Month\tSaver 1\t\tSaver2");
+        for(int i = 0; i < totalMonth; i++) {
+        	//System.out.println("Month " + (i + 1) + ":\nSaver 1 current balance: " + balanceMonth1[i] + " (with rate of 0.04)\n" );
+        	//System.out.printf("Month\tSaver1\tSaver2", )
+        	System.out.printf("%d\t%.2f\t\t%.2f\n", i+1, balanceMonth1[i], balanceMonth2[i]);
+        	
+        }
+        
+        SavingsAccount.modifyInterestRate(0.05);
+        
+        balanceMonth1 = saver1.getMonthsSavingBalance(13);             // I have added This Function that will calculate till which month you want
+          for(int i=12;i<totalMonth;i++) {
+              System.out.println("\n Month "+(i+1)+" :\n Saver 1 balance= "+balanceMonth1[i]+" with rate of 0.05" );
+         }
+         System.out.println("*********************************************************************\n");
+          balanceMonth2=saver2.getMonthsSavingBalance(13);             // I have added This Function that will calculate till which month you want
+          for(int i=12;i<totalMonth;i++)
+          {
+              System.out.println("\n Month "+(i+1)+" :\n Saver 2 balance= "+balanceMonth2[i]+" with rate of 0.05" );
+         }  
+         System.out.println("*********************************************************************\n");
+      }
+ 
+       // double saver1Month13 = (balanceMonth1[11] + ((balanceMonth1 [11] * .05) / 12));
+        //System.out.println("Month 13:\nSaver 1 current balance: " + saver1Month13 + " (with rate of .05)\n");
+        
+        //System.out.println("\n\n\n\n\n");
+        //double[] balanceMonth2 = saver2.getMonthsSavingBalance(totalMonth);            
+        //for(int i = 0; i < totalMonth; i++) {
+        	//System.out.println("Month " + (i + 1) + ":\nSaver 2 current balance: " + balanceMonth2[i] + " (with rate of 0.04)\n" );
+        //}
+        
+        //double saver2Month13 = (balanceMonth2[11] + ((balanceMonth2 [11] * .05) / 12));
+        //System.out.println("Month 13:\n Saver 2 current balance: " + saver2Month13 + " (with rate of .05)\n");
+        
+        //Test program sets the annualInterestRate to 5%
+        //SavingsAccount.modifyInterestRate (0.04);
+        
+    
+}
+
